@@ -1,0 +1,64 @@
+<h1 class="text-center mt-5" style="color: #ffff">
+  Questions of {{ qTitle | titlecase }}
+</h1>
+<hr class="w-50 mx-auto" style="color: #ffff" />
+<br />
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <div class="container text-center mb-5">
+      <button
+        mat-raised-button
+        class="btn-grad"
+        [routerLink]="'/admin-dash/add-questions/' + qId"
+      >
+        Add Question
+      </button>
+    </div>
+
+    <mat-card *ngFor="let q of questions; let i = index" class="mb-2">
+      <mat-card-content>
+        <div class="container">
+          <p>
+            <b>Q {{ i + 1 }}. </b>
+            <span class="ms-2" [innerHTML]="q.question"></span>
+          </p>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <p>1){{ q.options[0] }}</p>
+            </div>
+            <div class="col-md-6">
+              <p>2){{ q.options[1] }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>3){{ q.options[2] }}</p>
+            </div>
+            <div class="col-md-6">
+              <p>4){{ q.options[3] }}</p>
+            </div>
+          </div>
+
+          <hr class="w-100 mx-auto" />
+
+          <div class="mb-3">
+            <span class="mt-2"><b>Correct Answer:</b> {{ q.answer }}</span>
+
+            <button
+              (click)="deleteQuestion(q._id)"
+              class="deleteButton me-3"
+              mat-mini-fab
+              aria-label="Example icon button with a delete icon"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

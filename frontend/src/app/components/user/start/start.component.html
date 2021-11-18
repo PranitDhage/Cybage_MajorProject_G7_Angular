@@ -1,0 +1,151 @@
+<div class="container-fluid" *ngIf="!isSubmit">
+  <!-- questions -->
+  <ng-container *ngIf="questions">
+    <h1 class="text-center mt-4" style="color: #ffff">
+      On Going Quiz : <strong>{{ quizname }}</strong>
+    </h1>
+    <hr class="w-50 mx-auto" style="color: #ffff" />
+  </ng-container>
+  <br />
+
+  <div class="row">
+    <div class="col-md-3">
+      <!-- instructions -->
+      <mat-card class="my-3">
+        <div class="text-center">
+          <h2><strong>Instructions</strong></h2>
+          <hr class="w-50 mx-auto" />
+        </div>
+        <mat-card-content>
+          <ul>
+            <li>Do not refresh the page.</li>
+            <li>Do not switch the tabs.</li>
+            <li>Do not minimize the window.</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- progress -->
+      <mat-card class="mt-3">
+        <div class="text-center">
+          <h2><strong>Timer</strong></h2>
+          <hr class="w-50 mx-auto" />
+        </div>
+        <p class="text-center">
+          Quiz will automatically submitted when timer reaches to
+          <strong>0:0</strong>.
+        </p>
+
+        <mat-card-content>
+          <h1 class="text-center">{{ getFormattedTime() }}</h1>
+          <mat-spinner
+            color="accent"
+            style="margin: auto"
+            mode="determinate"
+            [value]="(timer / (this.questions.length * 2 * 60)) * 100"
+          ></mat-spinner>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-md-9 mt-3">
+      <mat-card *ngFor="let q of questions; let i = index" class="mb-3">
+        <mat-card-content>
+          <p>
+            <strong>Q.{{ i + 1 }})</strong>
+            <span class="ms-2" [innerHTML]="q.question"></span>
+          </p>
+
+          <mat-divider></mat-divider>
+          <br />
+
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [value]="q.options[0]"
+                [name]="toString1(i)"
+                [(ngModel)]="q.givenAnswer"
+              />
+              {{ q.options[0] }}
+            </div>
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [value]="q.options[1]"
+                [name]="toString1(i)"
+                [(ngModel)]="q.givenAnswer"
+              />
+              {{ q.options[1] }}
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [value]="q.options[2]"
+                [name]="toString1(i)"
+                [(ngModel)]="q.givenAnswer"
+              />
+              {{ q.options[2] }}
+            </div>
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [value]="q.options[3]"
+                [name]="toString1(i)"
+                [(ngModel)]="q.givenAnswer"
+              />
+              {{ q.options[3] }}
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="container text-center my-5">
+        <button (click)="submitQuiz()" mat-raised-button color="accent">
+          Submit Quiz
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- show result -->
+<div class="container text-center mt-5 result-container" *ngIf="isSubmit">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <div class="text-center">
+          <h2><strong>Quiz Result</strong></h2>
+          <hr class="w-50 mx-auto" />
+        </div>
+
+        <mat-card-content>
+          <h1>
+            Questions Attempted: <strong>{{ attempted }}</strong>
+          </h1>
+          <h1>
+            Correct Answers: <strong>{{ correctAnswers }}</strong>
+          </h1>
+          <h1>
+            Marks Got: <strong>{{ topScore }}</strong>
+          </h1>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button (click)="printPage()" mat-raised-button color="primary">
+            Print
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            [routerLink]="'/user-dashboard'"
+          >
+            Home
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

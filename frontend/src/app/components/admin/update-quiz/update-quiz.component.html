@@ -1,0 +1,66 @@
+<mat-card class="my-5">
+  <h1 class="text-center mt-2">Update Quiz</h1>
+  <hr class="w-50 mx-auto" />
+  <br />
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form *ngIf="quiz" (submit)="updateSubmit()">
+          <mat-form-field class="w-100 mb-3" appearance="outline">
+            <mat-label>Enter Title</mat-label>
+            <input
+              [(ngModel)]="quiz.name"
+              autofocus
+              matInput
+              placeholder="Enter here"
+              name="title"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="w-100 mb-3" appearance="outline">
+            <mat-label> Enter Description</mat-label>
+            <textarea
+              [(ngModel)]="quiz.description"
+              matInput
+              name="description"
+              placeholder="Enter category Description"
+              rows="5"
+            ></textarea>
+          </mat-form-field>
+
+          <!-- maxMarks -->
+          <mat-form-field class="w-100 mb-3" appearance="outline">
+            <mat-label>Enter Maximum Marks</mat-label>
+            <input
+              type="number"
+              [(ngModel)]="quiz.totalScore"
+              autofocus
+              matInput
+              placeholder="Enter here"
+              name="maxMarks"
+            />
+          </mat-form-field>
+
+          <!-- category select -->
+          <mat-form-field appearance="outline" class="mb-3 w-100">
+            <mat-label>Category</mat-label>
+            <mat-select name="category" [(ngModel)]="quiz.category">
+              <mat-option *ngFor="let c of categories" [value]="c">
+                {{ c }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="container text-center">
+            <button type="submit" mat-raised-button class="btn-grad mb-3">
+              Update Quiz
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+<!-- {{ quiz | json }} -->

@@ -1,0 +1,63 @@
+<mat-card class="my-5">
+  <h1 class="text-center mt-2">Add New Quiz</h1>
+  <hr class="w-50 mx-auto" />
+  <br />
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form (ngSubmit)="addQuiz()">
+          <mat-form-field class="w-100 mb-3" appearance="outline">
+            <mat-label>Enter Title</mat-label>
+            <input
+              [(ngModel)]="quizData.name"
+              autofocus
+              matInput
+              placeholder="Enter here"
+              name="title"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="w-100 mb-3" appearance="outline">
+            <mat-label> Enter Description</mat-label>
+            <textarea
+              [(ngModel)]="quizData.description"
+              matInput
+              name="description"
+              placeholder="Enter category Description"
+              rows="5"
+            ></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="w-100 mb-3" appearance="outline">
+            <mat-label>Enter Maximum Marks</mat-label>
+            <input
+              type="number"
+              [(ngModel)]="quizData.totalScore"
+              autofocus
+              matInput
+              placeholder="Enter here"
+              name="totalScore"
+            />
+          </mat-form-field>
+
+          <!-- category select -->
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>Category</mat-label>
+            <mat-select name="category" [(ngModel)]="quizData.category">
+              <mat-option *ngFor="let c of categories" [value]="c">
+                {{ c }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="container text-center">
+            <button type="submit" mat-raised-button class="btn-grad mb-3">
+              Add Quiz
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</mat-card>

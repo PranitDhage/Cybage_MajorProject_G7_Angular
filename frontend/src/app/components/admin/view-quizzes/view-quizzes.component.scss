@@ -1,0 +1,47 @@
+.example-header-image {
+  background-image: url("/assets/test.png");
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.deleteButton {
+  position: relative;
+  float: right;
+  background-color: #f8002f;
+  background-image: linear-gradient(326deg, #f8002f 0%, #000c14 74%);
+
+  color: #ffff;
+}
+
+.editButton {
+  position: relative;
+  float: right;
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}
+
+mat-card-subtitle {
+  color: black;
+}
+
+.btn-grad {
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}
+
+input {
+  width: 50%;
+  margin: auto;
+  background-color: #ffcfdf;
+  background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+}
+
+mat-card {
+  border-radius: 10px;
+  background-color: #ffcfdf;
+  background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+}
+.searchBox {
+  width: 70%;
+}

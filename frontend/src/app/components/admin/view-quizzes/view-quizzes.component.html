@@ -1,0 +1,116 @@
+<div class="row">
+  <div class="col-md-8 mt-5">
+    <div class="dropdown">
+      <button
+        class="btn dropdown-toggle btn-grad"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Category</button
+      ><span class="ms-3" style="color: white">{{
+        " Active: " + searchTextCategory
+      }}</span>
+      <div class="dropdown-menu drpMain" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item drp" (click)="categoryFilter('')">All</a>
+        <a
+          class="dropdown-item drp"
+          (click)="categoryFilter('Logical Thinking')"
+          >Logical Thinking</a
+        >
+        <a class="dropdown-item drp" (click)="categoryFilter('Brain teasers')"
+          >Brain teasers</a
+        >
+        <a
+          class="dropdown-item drp"
+          (click)="categoryFilter('General Knowledge')"
+          >General Knowledge</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mt-5">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control searchBox"
+        id="search-text"
+        aria-describedby="search-text"
+        [(ngModel)]="searchTextName"
+        placeholder="Enter text to search"
+        autofocus
+      />
+    </div>
+  </div>
+
+  <div class="container my-3 text-center">
+    <button
+      class="btn-grad"
+      mat-raised-button
+      routerLink="/admin-dash/add-quizzes"
+    >
+      Add Quiz
+    </button>
+  </div>
+
+  <div class="container-fluid">
+    <mat-card
+      class="my-3 mx-auto"
+      *ngFor="
+        let q of quizzes
+          | quizCategoryPipe: searchTextCategory
+          | quizSearchPipe: searchTextName
+      "
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+          {{ q.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{ q.category }}
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+          <p>{{ q.description }}</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions class="mb-1">
+        <button
+          [routerLink]="'/admin-dash/view-questions/' + q._id"
+          mat-flat-button
+          class="btn-grad"
+        >
+          Qusetions
+        </button>
+
+        <button mat-stroked-button color="primary" class="ms-2">
+          Max Marks: {{ q.totalScore }}
+        </button>
+
+        <button
+          (click)="deleteQuiz(q._id)"
+          color="accent"
+          class="deleteButton mx-3"
+          mat-mini-fab
+          aria-label="Example icon button with a delete icon"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button
+          [routerLink]="'/admin-dash/quiz/' + q._id"
+          color="primary"
+          class="update"
+          mat-mini-fab
+          class="editButton"
+          aria-label="Example icon button with a delete icon"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

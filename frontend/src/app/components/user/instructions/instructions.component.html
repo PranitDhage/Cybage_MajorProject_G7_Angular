@@ -1,0 +1,66 @@
+<div class="container-fluid my-5">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title class="text-center">
+            Read the following instructions carefully...
+          </mat-card-title>
+        </mat-card-header>
+        <hr class="w-100 mx-auto" />
+
+        <mat-card-content class="ms-3">
+          <h1 class="text-center">
+            <strong>{{ quiz.name }}</strong>
+          </h1>
+
+          <hr class="w-50 mx-auto" />
+
+          <h1>Important Instructions</h1>
+          <ul>
+            <li>This quiz is only for practice purpose.</li>
+            <li>Time for each question is 2 minutes.</li>
+
+            <li>
+              <!-- let the time for each question is 2 min -->
+              You have to submit quiz within
+              <strong>{{ numberOfQuestions * 2 }} minutes.</strong>
+            </li>
+            <li>You can attempt the quiz any number of time.</li>
+            <li>There are {{ numberOfQuestions }} questions in this quiz.</li>
+            <li>
+              Each question carries
+              <strong>{{ quiz.totalScore / numberOfQuestions }} marks.</strong>
+              No negative marking.
+            </li>
+            <li>All questions is of MCQ types.</li>
+          </ul>
+
+          <hr class="w-100 mx-auto" />
+
+          <h1>Attempting Quiz</h1>
+          <ul>
+            <li>Click <strong>Start Test</strong> button to start the quiz.</li>
+            <li>
+              The time will start the moment you click the Start Test button.
+            </li>
+            <li>
+              You can not resume this quiz, if interrupted due to any reason.
+            </li>
+            <li>Scroll down to move to the next question.</li>
+            <li>
+              Report of the test is automatically generated and you can print it
+              in pdf format.
+            </li>
+          </ul>
+        </mat-card-content>
+
+        <mat-card-actions class="text-center mb-4 mt-2">
+          <button mat-raised-button class="btn-grad" (click)="startQuiz()">
+            Start Quiz
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

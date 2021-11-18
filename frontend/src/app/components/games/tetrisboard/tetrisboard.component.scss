@@ -1,0 +1,188 @@
+
+* {
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 37rem 20rem;
+  }
+  
+  .card{
+    height: 100%;
+    width: 100%;
+  }
+  .right-column{
+    
+    height: 850px;
+    width: 350px;
+    margin: 1px;
+  }
+  .game-board {
+    height: 850px;
+    width: 450px;
+    margin: 1px;
+    border: solid 2px;
+    background-image: url(../../../../assets/vecImg.jpg);
+   margin-left: 20%;
+  }
+  
+  .play-button {
+    background-color: #4caf50;
+    font-size: 16px;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  .content{
+    
+    text-align: center;
+  }
+  .instruction{
+    
+    color: yellow;
+    font-size: large;
+    text-align: center;
+    background-color: black;
+    opacity: 0.75;
+    padding: 1%;
+  }
+  .instr{
+    color: rgb(255, 255, 255);
+    font-size: larger;
+  }
+  .myTetris{
+    background:url(../../../../assets/scene.jpg) ;
+  }
+  span{
+    color: rgb(29, 250, 0);
+  }
+  .noInstr{
+    display: none;
+    background-color: blue;
+  }
+  @media only screen and (max-width: 1060px) {
+    .right-column{
+    
+      height: 650px;
+      width: 250px;
+      margin: 1px;
+    }
+    .game-board {
+      height: 650px;
+      width: 350px;
+      margin: 1px;
+      border: solid 2px;
+      background-image: url(../../../../assets/vecImg.jpg);
+    }
+  }
+  @media only screen and (max-width: 817px) {
+    .right-column{
+    
+      height: 650px;
+      width: 200px;
+      margin: 1px;
+    }
+    .game-board {
+      height: 650px;
+      width: 300px;
+      margin: 1px;
+      border: solid 2px;
+      background-image: url(../../../../assets/vecImg.jpg);
+    }
+    .instruction{
+      margin: 2%;
+      color: yellow;
+      font-size: small;
+      text-align: center;
+      background-color: black;
+      padding: 1%;
+    }
+    .instr{
+      color: rgb(255, 255, 255);
+      font-size: large;
+    }
+    span{
+      color: rgb(29, 250, 0);
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .right-column{
+      font-size: 9px;
+      height: 650px;
+      width: 150px;
+      margin: 1px;
+    }
+    .game-board {
+      height: 650px;
+      width:200px;
+      margin: 1px;
+      border: solid 2px;
+      background-image: url(../../../../assets/vecImg.jpg);
+    }
+    .play-button {
+      background-color: #4caf50;
+      font-size: 10px;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+    h1{
+      font-size: 10px;
+    }
+    .instruction{
+      margin: 2%;
+      color: yellow;
+      font-size: smaller;
+      text-align: center;
+      background-color: black;
+      padding: 1%;
+    }
+    .instr{
+      color: rgb(255, 255, 255);
+      font-size: x-small;
+    }
+    span{
+      color: rgb(29, 250, 0);
+    }
+  }
+  
+  @media only screen and (max-width: 455px) {
+    .right-column{
+      font-size: 9px;
+      height: 500px;
+      width: 100px;
+      margin: 1px;
+    }
+    .game-board {
+      height: 500px;
+      width:190px;
+      margin: 1px;
+      border: solid 2px;
+      background-image: url(../../../../assets/vecImg.jpg);
+    }
+    .play-button {
+      background-color: #4caf50;
+      font-size: 10px;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+    h1 h2{
+      font-size: 10px;
+    }
+    .next{
+      height: 70px;
+      width: 80px;
+    }
+  }
+  
+  @media only screen and (min-width: 1900px) {
+    
+    
+    .game-board {
+      height: 850px;
+      width: 450px;
+      margin: 1px;
+      border: solid 2px;
+      background-image: url(../../../../assets/vecImg.jpg);
+      margin-left: 40%;
+    }
+  }

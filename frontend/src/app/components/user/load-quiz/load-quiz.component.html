@@ -1,0 +1,44 @@
+<div class="container-fluid my-5">
+  <h1 class="text-center" style="color: #ffff">Available Quizzes</h1>
+  <hr class="w-50 mx-auto" style="color: #ffff" />
+
+  <div class="row mt-5">
+    <div class="col-md-4" *ngFor="let q of quizzes">
+      <mat-card class="mb-2 load-quiz">
+  
+        
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+
+         
+          <mat-card-title>
+            <strong>{{ q.name }}</strong>
+          </mat-card-title>
+
+         
+          <mat-card-subtitle>
+            {{ q.category }}
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-actions>
+          <button
+            mat-button
+            color="accent"
+            [routerLink]="'/user-dashboard/instructions/' + q._id"
+            (click)="onStart(q.name, q.category)"
+          >
+            Start
+          </button>
+
+          <button mat-button color="accent">
+            Max.Marks: {{ q.totalScore }}
+          </button>
+          <button class="fav" (click)="addFavourite(q._id)" mat-raised-button color="accent">
+            Fav
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

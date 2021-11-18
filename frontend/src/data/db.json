@@ -1,0 +1,138 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Pranitasa",
+      "email": "pranitasa@cybage.com",
+      "password": "Paherrao"
+    },
+    {
+      "id": 2,
+      "username": "walmik",
+      "email": "wal@cybage.com",
+      "password": "wal@123"
+    },
+    {
+      "id": 3,
+      "username": "Ovi",
+      "email": "ovi@cybage.com",
+      "password": "ovi@111"
+    },
+    {
+      "username": "Suresh",
+      "email": "Suresh@gmail.com",
+      "password": "suresh@",
+      "id": 4
+    },
+    {
+      "username": "priya",
+      "email": "priya@gmail.com",
+      "password": "priya@",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "PROGRAMMING",
+      "description": "this is testing categories"
+    },
+    {
+      "id": 2,
+      "title": "GK based",
+      "description": "this is testing categories"
+    },
+    {
+      "id": 3,
+      "title": " Programming Practice",
+      "description": "this is testing categories"
+    },
+    {
+      "title": "Logical Thinking",
+      "description": "This category covers all quizzes of logical thinking.",
+      "id": 4
+    },
+    {
+      "title": "Quantitative",
+      "description": "this category contains all the quizzes about quant section",
+      "id": 5
+    }
+  ],
+  "quizzes": [
+    {
+      "id": 2,
+      "title": "Basic Java Quizzes",
+      "description": "“Core Java” is Sun’s term, used to refer to Java SE, the standard edition and a set of related technologies, like the Java VM, CORBA, etc. This is mostly to differentiate from others like Java ME or Java EE.",
+      "maxMarks": "50",
+      "numberofQuestions": "20",
+      "active": "",
+      "category": {
+        "title": "Programming"
+      }
+    },
+    {
+      "title": "Current Affairs",
+      "description": "This quiz contains all questios about current affairs.",
+      "maxMarks": "100",
+      "numberofQuestions": "100",
+      "active": true,
+      "category": {
+        "id": 2,
+        "title": "GK based",
+        "description": "this is testing categories"
+      },
+      "id": 4
+    },
+    {
+      "title": " Logical Reasoning",
+      "description": "this quiz contains all questions about logical reasoning",
+      "maxMarks": "20",
+      "numberofQuestions": "10",
+      "active": true,
+      "category": {
+        "title": "Logical Thinking",
+        "description": "This category covers all quizzes of logical thinking.",
+        "id": 4
+      },
+      "id": 5
+    }
+  ],
+  "questions": [
+    {
+      "quiz": {
+        "id": "2"
+      },
+      "content": "What is collection?",
+      "option1": "enum",
+      "option2": "package",
+      "option3": "subject",
+      "option4": "none",
+      "answer": "package",
+      "id": 1
+    },
+    {
+      "quiz": {
+        "id": "4"
+      },
+      "content": "On October 5, India has celebrated Ganga River Dolphin Day. In which year,  it was observed first?",
+      "option1": "2008",
+      "option2": "2009",
+      "option3": "2010",
+      "option4": "2011",
+      "answer": "2009",
+      "id": 2
+    },
+    {
+      "quiz": {
+        "id": "5"
+      },
+      "content": "Look at this series: 7, 10, 8, 11, 9, 12, ... What number should come next?",
+      "option1": "7",
+      "option2": "10",
+      "option3": "12",
+      "option4": "13",
+      "answer": "13",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<mat-card class="text-center my-5">
+  <div class="text-center">
+    <h1>Leaderboard</h1>
+
+    <hr class="w-50 mx-auto" />
+  </div>
+  <mat-card-content>
+    <table class="table table-hover my-5">
+      <thead>
+        <tr>
+          <th scope="col">Sr No</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Quiz / Game</th>
+          <th scope="col">Top Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let l of topScorer; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ l.username }}</td>
+          <td>{{ l.category }}</td>
+          <td>{{ l._id.name }}</td>
+          <td>{{ l.topScore }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

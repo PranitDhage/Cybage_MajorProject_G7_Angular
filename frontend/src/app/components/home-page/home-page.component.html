@@ -1,0 +1,362 @@
+<header>
+  <div class="container-fluid p-0">
+    <nav
+      [ngClass]="{ sticky: visible, sticky1: visible1, sticky2: visible2 }"
+      #navbar
+      class="navbar navbar-expand-lg"
+    >
+      <a class="navbar-brand" [routerLink]="''">
+        <img
+          src="/assets/navLogo.png"
+          style="width: 60px; height: 60px"
+          alt="main logo"
+        />
+        Bestify Your Time</a
+      >
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-align-right text-light"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="mr-auto"></div>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button
+              *ngIf="!loggedIn()"
+              [routerLink]="'/login'"
+              mat-icon-button
+              class="example-icon me-5"
+              style="color: aliceblue"
+              aria-label="Example icon-button with login icon"
+            >
+              <mat-icon>login</mat-icon>Login
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              *ngIf="!loggedIn()"
+              [routerLink]="'/signup'"
+              mat-icon-button
+              class="example-icon me-5"
+              style="color: aliceblue"
+              aria-label="Example icon-button with share icon"
+            >
+              <mat-icon>app_registration</mat-icon>Register
+            </button>
+          </li>
+
+          <li class="nav-item" style="color: aliceblue">
+            <button
+              *ngIf="loggedIn()"
+              routerLink="{{
+                role == 'admin' ? '/admin-dash' : '/user-dashboard'
+              }}"
+              mat-icon-button
+              class="example-icon me-5"
+              aria-label="Example icon-button with share icon"
+            >
+              <mat-icon>person</mat-icon>{{ currentUser }}
+            </button>
+          </li>
+          <li class="nav-item" style="color: aliceblue">
+            <button
+              *ngIf="loggedIn()"
+              [routerLink]="''"
+              mat-icon-button
+              class="example-icon me-5"
+              aria-label="Example icon-button with share icon"
+              (click)="onLogout()"
+            >
+              <mat-icon>logout</mat-icon>Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-7 col-sm-12 text-white">
+        <h6>CORE-7: Aesthetic Development Culture</h6>
+        <h1>EXPERIENCE THE ADVENTURE</h1>
+        <p>
+          If our lives are already written , it would take a couragious man to
+          change the script,so with a boolean of true lets get Started
+        </p>
+        <button
+          *ngIf="!loggedIn()"
+          class="btn btn-light px-5 py-2 primary-btn"
+          [routerLink]="'/login'"
+        >
+          Get Started
+        </button>
+      </div>
+      <div class="col-md-5 col-sm-12 h-25">
+        <br />
+        <img src="../../../assets/redConsole.png" alt="Book" />
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="section-1">
+    <div class="content text-center">
+      <h2>
+        Responsive gaming features, take a look at the following puzzles , match
+        the two rows to experience responsive rendering
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="content text-center">
+          <h1>Animals</h1>
+        </div>
+        <app-game-two></app-game-two>
+      </div>
+      <div class="col-sm">
+        <div class="content text-center">
+          <h1>Random</h1>
+        </div>
+        <app-game-second></app-game-second>
+      </div>
+    </div>
+  </section>
+  <section class="section-2 container-fluid p-0">
+    <div class="cover">
+      <div class="overlay"></div>
+      <div class="content text-center">
+        <h1>Some Features Of Our Project</h1>
+      </div>
+    </div>
+    <div class="container-fluid text-center">
+      <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
+        <div class="rect">
+          <i class="fas fa-gamepad fa-6x"></i><br />
+          <p>Graphic</p>
+        </div>
+        <div class="rect">
+          <i class="fas fa-user-clock fa-6x"></i><br />
+          <p>Clocked Activities</p>
+        </div>
+        <div class="rect">
+          <i class="fas fa-question fa-6x"></i><br />
+          <p>Quizes</p>
+        </div>
+        <div class="rect">
+          <i class="fas fa-brain fa-6x"></i><br />
+          <p>Brain Teasers</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="purchase text-center">
+      <h1>Variety from Graphics to Brain Teasers</h1>
+      <div class="cards">
+        <div class="d-flex flex-row justify-content-center flex-wrap">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="../../../assets/raceingap.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div class="title"></div>
+              <div class="pricing">
+                <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5"
+                  >High End Graphics Game</a
+                >
+              </div>
+            </div>
+            <img
+              class="card-img-top"
+              src="../../../assets/race2.jpg"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="../../../assets/punk.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div class="title"></div>
+              <div class="pricing">
+                <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5"
+                  >Single Player Games</a
+                >
+              </div>
+            </div>
+            <img
+              class="card-img-top"
+              src="../../../assets/tasoshin.png"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="../../../assets/quizImage.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div class="title"></div>
+              <div class="pricing">
+                <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5"
+                  >Categorised Quizes</a
+                >
+              </div>
+            </div>
+            <img
+              class="card-img-top"
+              src="../../../assets/logical.jpg"
+              alt="Card image cap"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-3 container-fluid p-0 text-center">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h1>MultiPlatform User Interface</h1>
+        <p>
+          With responsive design User is able to Play/Browse our website in any
+          mode
+        </p>
+      </div>
+    </div>
+    <div class="platform row">
+      <div class="col-md-6 col-sm-12 text-right">
+        <div class="desktop shadow-lg">
+          <div class="d-flex flex-row justify-content-center">
+            <i class="fas fa-desktop fa-3x py-2 pr-3"></i><br />
+            <div class="text text-left"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 text-left">
+        <div class="desktop shadow-lg">
+          <div class="d-flex flex-row justify-content-center">
+            <i class="fas fa-mobile-alt fa-3x py-2 pr-3"></i><br />
+            <div class="text text-left"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section-4">
+    <div class="container text-center">
+      <h1>Framework Used in the Project</h1>
+    </div>
+    <div class="team row">
+      <div class="col-md-3 col-12 text-center">
+        <div class="card mr-2 d-inline-block shadow-lg">
+          <div class="card-img-top">
+            <img
+              src="../../../assets/Angualr.jpg"
+              class="img-fluid border-radius p-4"
+              alt=""
+            />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Angular</h3>
+            <p class="card-text">
+              Angular is an application design framework and development
+              platform for creating efficient and sophisticated single-page
+              apps.
+            </p>
+            <a
+              href="https://angular.io/docs"
+              class="text-secondary text-decoration-none"
+              >Know More</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12 text-center">
+        <div class="card mr-2 d-inline-block shadow-lg">
+          <div class="card-img-top">
+            <img
+              src="../../../assets/nodeJS.jpeg"
+              class="img-fluid border-radius p-4"
+              alt=""
+            />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">NodeJS</h3>
+            <p class="card-text">
+              As an asynchronous event-driven JavaScript runtime, Node.js is
+              designed to build scalable network applications, many connections
+              can be handled concurrently.
+            </p>
+            <a
+              href="https://nodejs.org/en/about/"
+              class="text-secondary text-decoration-none"
+              >Know More</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12 text-center">
+        <div class="card mr-2 d-inline-block shadow-lg">
+          <div class="card-img-top">
+            <img
+              src="../../../assets/expressJS.png"
+              class="img-fluid border-radius p-4"
+              alt=""
+            />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">ExpressJS</h3>
+            <p class="card-text">
+              Express.js, or simply Express, is a back end web application
+              framework for Node.js. It is designed for building web
+              applications and APIs
+            </p>
+            <a
+              href="https://expressjs.com/en/resources/glossary.html"
+              class="text-secondary text-decoration-none"
+              >Know More</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12 text-center">
+        <div class="card mr-2 d-inline-block shadow-lg">
+          <div class="card-img-top">
+            <img
+              src="../../../assets/mongoDB.jpg"
+              class="img-fluid border-radius p-4"
+              alt=""
+            />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">MongoDB</h3>
+            <p class="card-text">
+              MongoDB is a source-available cross-platform document-oriented
+              database program. MongoDB uses JSON-like documents with optional
+              schemas
+            </p>
+            <a
+              href="https://www.mongodb.com/"
+              class="text-secondary text-decoration-none"
+              >Know More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

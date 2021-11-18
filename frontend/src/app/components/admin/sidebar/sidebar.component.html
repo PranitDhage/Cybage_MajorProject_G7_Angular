@@ -1,0 +1,33 @@
+<mat-card class="mt-5">
+  <mat-action-list>
+    <div class="text-center">
+      <h2><strong>Menu</strong></h2>
+    </div>
+
+    <hr class="w-50 mx-auto" />
+
+    <button mat-list-item routerLink="/admin-dash">
+      <mat-icon mat-list-icon>dashboard</mat-icon>Dashboard
+    </button>
+
+    <button mat-list-item routerLink="/admin-dash/profile">
+      <mat-icon mat-list-icon>account_circle</mat-icon>Profile
+    </button>
+
+    <button mat-list-item routerLink="/admin-dash/view-quizzes">
+      <mat-icon mat-list-icon>quiz</mat-icon>Quizzes
+    </button>
+
+    <button mat-list-item routerLink="/admin-dash/add-quizzes">
+      <mat-icon mat-list-icon>add</mat-icon>Add Quiz
+    </button>
+
+    <button mat-list-item routerLink="/admin-dash/leaderboard">
+      <mat-icon mat-list-icon>leaderboard</mat-icon>Leaderboard
+    </button>
+
+    <button mat-list-item (click)="logout()">
+      <mat-icon mat-list-icon>logout</mat-icon>Logout
+    </button>
+  </mat-action-list>
+</mat-card>

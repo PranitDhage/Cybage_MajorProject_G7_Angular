@@ -1,0 +1,26 @@
+.profile-image {
+  max-width: 150px;
+  max-height: 150px;
+  border: 1px solid #0e0c0d;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table tr td {
+  padding: 15px 20px;
+  border: 2px solid red;
+  border: 2px solid #0a0909;
+  font-size: 1rem;
+}
+
+mat-card {
+  border-radius: 10px;
+  background-color: #ffcfdf;
+  background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+}

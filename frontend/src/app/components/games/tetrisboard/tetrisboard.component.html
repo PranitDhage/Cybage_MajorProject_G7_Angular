@@ -1,0 +1,33 @@
+
+<div class="myTetris">
+    <div class="row instruction">
+        <div><span class="instr">
+                Instructions:</span>|"Space-Bar"|<span>:Hard drop</span>|"Down-Arrow"|<span>:SpeedUp
+                block</span>|"Right-Arrow"|<span>:Move block to Left</span>|"Escape-bar"|
+            <span>:Quite Game</span>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 content">
+            <canvas #board class="game-board image-fluid"></canvas>
+        </div>
+        <div class="col-6 content">
+            <div class="right-column">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h1>TETRIS</h1>
+                            <!-- have to enter highest scorer untill now -->
+                            <!-- -------------------------------- -->
+                            <h2>High Score: {{score}}</h2>
+                            <p>Score: {{ points }}</p>
+                            <canvas #next class="next"></canvas>
+                        </div>
+                        <button (click)="play()" class="play-button btn btn btn-success">Play</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

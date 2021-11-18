@@ -1,0 +1,15 @@
+<h2 class="text-center mt-5" style="color: #ffff"><strong>Users</strong></h2>
+<hr class="w-50 mx-auto" style="color: #ffff" />
+<br />
+<mat-card class="mt-4 mx-2" *ngFor="let u of users">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      {{ u.username }}
+    </mat-card-title>
+    <mat-card-subtitle
+      >Email:
+      {{ u.email }}
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

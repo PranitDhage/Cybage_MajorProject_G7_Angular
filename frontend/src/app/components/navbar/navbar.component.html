@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <img src="/assets/navLogo.png" alt="main logo" />
+    <a class="navbar-brand ms-3" [routerLink]="''">Bestify Your Time</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="true"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse" id="navbarColor01">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button
+            [routerLink]="''"
+            mat-icon-button
+            class="example-icon me-5"
+            aria-label="Example icon-button with login icon"
+          >
+            <mat-icon>home</mat-icon> Home
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button
+            *ngIf="!loggedIn()"
+            [routerLink]="'/login'"
+            mat-icon-button
+            class="example-icon me-5"
+            aria-label="Example icon-button with login icon"
+          >
+            <mat-icon>login</mat-icon> Login
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button
+            *ngIf="!loggedIn()"
+            [routerLink]="'/signup'"
+            mat-icon-button
+            class="example-icon me-5"
+            aria-label="Example icon-button with share icon"
+          >
+            <mat-icon>app_registration</mat-icon>Register
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button
+            *ngIf="loggedIn()"
+            routerLink="{{
+              role == 'admin' ? '/admin-dash' : '/user-dashboard'
+            }}"
+            mat-icon-button
+            class="example-icon me-5"
+            aria-label="Example icon-button with share icon"
+          >
+            <mat-icon>person</mat-icon>{{ currentUser }}
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button
+            *ngIf="loggedIn()"
+            [routerLink]="''"
+            mat-icon-button
+            class="example-icon me-5"
+            aria-label="Example icon-button with share icon"
+            (click)="onLogout()"
+          >
+            <mat-icon>logout</mat-icon>Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
